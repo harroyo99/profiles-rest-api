@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from . import models
+from profiles_api import models
 
 
 admin.site.register(models.UserProfile)
