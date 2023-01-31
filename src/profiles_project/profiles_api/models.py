@@ -5,8 +5,9 @@ from django.contrib.auth.models import BaseUserManager
 
 class UserProfileManager(BaseUserManager):
     """Helps Django work with our custom user model"""
+
     def create_user(self, email, name, password=None):
-        """Creates a new user profile object"""
+        """Creates a new user profile object for the project"""
 
         if not email:
             raise ValueError('Users must have an email address.')
@@ -58,7 +59,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
 
   def __str__(self):
-        """Django uses this when it needs a to connect key objects to a string"""
+        """Django uses this when it needs a to connect key
+        objects to a string"""
 
         return self.email
 
